@@ -1,0 +1,1099 @@
+
+/* 3.2 dc-service-section */
+
+.dc-service-section {
+    .dc-service-slider {
+        padding-top: 40px;
+
+        .dc-service-item {
+            .dc-service-text {
+                position: absolute;
+                padding: 30px;
+                left: 0;
+                bottom: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                z-index: 1;
+
+                &:before,
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    content: "";
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 36.1%, #091F34 84.28%);
+                    z-index: -1;
+                    transition: all .3s;
+                }
+
+                &:after {
+                    background: linear-gradient(180deg, rgba(0, 84, 143, 0) 52.55%, #094B7A 88.33%);
+                    transition: all .3s;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                span {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 27px;
+                    color: $doctor-theme-color;
+                    display: block;
+                    transition: all .3s;
+                }
+
+                h2 {
+                    font-weight: 600;
+                    font-size: 22px;
+                    line-height: 127.9%;
+                    text-align: center;
+                    color: $white;
+                    margin-top: 10px;
+                    font-family: $base-font;
+
+                    a {
+                        color: $white;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .dc-service-inner {
+                    text-align: center;
+                }
+            }
+
+
+            &:hover {
+                .dc-service-text {
+                    &:after {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    span {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .owl-controls {
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            @include translatingY();
+        }
+
+        .owl-nav [class*=owl-] {
+            padding: 0;
+            margin: 0;
+            color: $doctor-theme-color;
+            @include transition-time(0.3s);
+            border: 0;
+            background: none;
+
+            i {
+                font-size: 20px;
+                color: $doctor-theme-color;
+            }
+        }
+
+        .owl-nav .owl-prev,
+        .owl-nav .owl-next {
+            position: absolute;
+            top: 55%;
+            @include translatingY();
+            background: $white;
+            width: 50px;
+            height: 50px;
+            line-height: 58px;
+            border-radius: 50%;
+            transition: all .3s;
+            box-shadow: 0px 0px 30px rgba(30, 52, 70, 0.1);
+
+            @media(max-width:575px) {
+                display: none;
+            }
+
+            &:hover {
+                background: $doctor-theme-color;
+
+                i {
+                    color: $white;
+                }
+
+            }
+        }
+
+        .owl-nav .owl-prev {
+            left: -28px;
+        }
+
+        .owl-nav .owl-next {
+            right: -28px;
+        }
+
+        .owl-dots {
+            text-align: center;
+            bottom: -30px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media(min-width:575px) {
+                display: none;
+            }
+
+            button {
+                border: none;
+                margin: 0 5px;
+                width: 20px;
+                height: 8px;
+                border-radius: 10px;
+
+                &.active {
+                    background: $doctor-theme-color;
+                    width: 45px;
+                }
+            }
+        }
+    }
+}
+
+
+/* 3.3 dc-step-section */
+
+.dc-step-section {
+    background: #F3ECE0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    @media(max-width:991px) {
+        padding-bottom: 60px;
+    }
+
+    @media(max-width:767px) {
+        padding-bottom: 50px;
+    }
+
+    @media(max-width:575px) {
+        padding-bottom: 40px;
+    }
+
+    &:before {
+        position: absolute;
+        left: 20%;
+        bottom: 0;
+        content: "";
+        width: 362px;
+        height: 381px;
+        background: linear-gradient(180deg, rgba(219, 255, 0, 0.2) 0%, rgba(0, 255, 255, 0.2) 100%);
+        filter: blur(100px);
+        z-index: -1;
+    }
+
+    .dc-step-title {
+        max-width: 290px;
+
+        @media(max-width:991px) {
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        span {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 23px;
+            text-transform: uppercase;
+            color: $doctor-theme-color;
+        }
+
+        h2 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 118.7%;
+            text-transform: capitalize;
+            margin-top: 10px;
+            margin-bottom: 0;
+
+            @media(max-width:1399px) {
+                font-size: 42px;
+            }
+
+            @media(max-width:1199px) {
+                font-size: 35px;
+            }
+        }
+    }
+
+    .dc-step-item {
+        text-align: center;
+        position: relative;
+
+        @media(max-width:991px) {
+            margin-bottom: 30px;
+        }
+
+        .dc-step-img {
+            width: 144px;
+            height: 144px;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            position: relative;
+
+            img {
+                border-radius: 50%;
+            }
+
+            .thumb {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                background: $doctor-theme-color;
+                color: $white;
+                border-radius: 50%;
+            }
+        }
+
+        .dc-step-text {
+            h3 {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 25px;
+                text-align: center;
+                text-transform: capitalize;
+
+                @media(max-width:1199px) {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 160%;
+                text-align: center;
+                margin-bottom: 0;
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            right: -80px;
+            top: 0;
+
+            @media(max-width:991px) {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/* 3.4 dc-testimonial-section  */
+
+.dc-testimonial-section {
+    .dc-testimonial-item {
+        max-width: 751px;
+        margin: 0 auto;
+        padding-top: 50px;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -50px;
+            content: "\f12f";
+            font-family: 'flaticon_Pdoctor';
+            font-size: 120px;
+            color: rgba(127, 116, 178, 0.1);
+            ;
+        }
+
+        .dc-testimonial-slide-inner {
+            p {
+                font-style: italic;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 160%;
+                text-align: center;
+                font-family: $heading-font-2;
+            }
+        }
+
+        .dc-testimonial-client {
+            text-align: center;
+
+            .dc-testimonial-client-img {
+                width: 70px;
+                height: 70px;
+                padding: 2px;
+                background: $doctor-theme-color;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+
+                img {
+                    border-radius: 50%;
+                }
+            }
+
+            .dc-testimonial-client-text {
+                h4 {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 160%;
+                    font-family: $base-font;
+                }
+            }
+        }
+    }
+
+    .owl-controls {
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        @include translatingY();
+    }
+
+    .owl-nav [class*=owl-] {
+        padding: 0;
+        margin: 0;
+        color: $doctor-theme-color;
+        @include transition-time(0.3s);
+        border: 0;
+        background: none;
+
+        i {
+            font-size: 20px;
+            color: $doctor-theme-color;
+        }
+    }
+
+    .owl-nav .owl-prev,
+    .owl-nav .owl-next {
+        position: absolute;
+        top: 30%;
+        @include translatingY();
+        background: $white;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 4px;
+        transition: all .3s;
+        box-shadow: 0px 0px 30px rgba(30, 52, 70, 0.1);
+
+        @media(max-width:991px) {
+            display: none;
+        }
+
+        &:hover {
+            background: $doctor-theme-color;
+
+            i {
+                color: $white;
+            }
+
+        }
+    }
+
+    .owl-nav .owl-prev {
+        left: -35px;
+    }
+
+    .owl-nav .owl-next {
+        right: -35px;
+    }
+
+    .owl-dots {
+        text-align: center;
+        bottom: -30px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media(min-width:991px) {
+            display: none;
+        }
+
+        button {
+            border: none;
+            margin: 0 5px;
+            width: 20px;
+            height: 8px;
+            border-radius: 10px;
+
+            &.active {
+                background: $doctor-theme-color;
+                width: 45px;
+            }
+        }
+    }
+}
+
+
+/* 3.5 dc-blog-post-area */
+
+.dc-blog-post-area {
+    padding-bottom: 90px;
+    background: rgba(243, 236, 224, 0.31);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:before {
+        position: absolute;
+        left: 50%;
+        top: 100px;
+        content: "";
+        position: absolute;
+        width: 362px;
+        height: 381px;
+        background: linear-gradient(180deg, rgba(219, 255, 0, 0.2) 0%, rgba(0, 255, 255, 0.2) 100%);
+        filter: blur(100px);
+        z-index: -1;
+    }
+
+    @media(max-width:991px) {
+        padding-bottom: 60px;
+    }
+
+    @media(max-width:767px) {
+        padding-bottom: 50px;
+    }
+
+    @media(max-width:575px) {
+        padding-bottom: 40px;
+    }
+
+    .dc-blog-wrap {
+        .dc-blog-item {
+            margin-bottom: 30px;
+
+            .dc-blog-img {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .dc-blog-content {
+                padding-top: 20px;
+
+                .blog-text-info {
+                    ul {
+                        list-style: none;
+                        display: flex;
+                        margin-bottom: 20px;
+                        align-items: center;
+
+                        li {
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 104.9%;
+                            text-transform: capitalize;
+                            color: $text-color-2;
+
+                            span {
+                                display: inline-block;
+                                padding: 5px 13px;
+                                background: rgba(39, 165, 255, 0.13);
+                                color: $doctor-theme-color;
+                            }
+
+                            a {
+                                display: flex;
+                                align-items: center;
+                                color: $text-color-2;
+
+                                &:hover {
+                                    color: $doctor-theme-color;
+                                }
+                            }
+
+                            i {
+                                margin-right: 10px;
+                            }
+
+                            &+li {
+                                margin-left: 20px;
+
+                                @include media-query(575px) {
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                h2 {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 22px;
+                    line-height: 115.9%;
+                    margin-bottom: 0;
+
+                    @media(max-width:1399px) {
+                        font-size: 20px;
+                    }
+
+                    a {
+                        color: $dark-gray;
+
+                        &:hover {
+                            color: $doctor-theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 3.6 dc-career-section */
+
+.dc-career-section {
+    .dc-career-wrap {
+        .dc-career-img {
+            padding-right: 100px;
+            position: relative;
+
+            @media(max-width:575px) {
+                padding-right: 70px;
+            }
+
+            img {
+                border-radius: 4px;
+            }
+
+            .dc-career-inner {
+                position: absolute;
+                right: 50px;
+                bottom: 50px;
+                border-radius: 4px;
+
+                @media(max-width:575px) {
+                    max-width: 50%;
+                    right: 0;
+                    bottom: 20px;
+                }
+            }
+
+            @media(max-width:991px) {
+                margin-bottom: 40px;
+            }
+        }
+
+        .dc-career-text {
+            max-width: 590px;
+
+            span {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 23px;
+                text-transform: uppercase;
+                color: $doctor-theme-color;
+            }
+
+            h2 {
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 118.7%;
+                text-transform: capitalize;
+                max-width: 400px;
+                margin-bottom: 20px;
+
+                @media(max-width:575px) {
+                    font-size: 30px;
+                    margin-bottom: 5px;
+                }
+            }
+
+            ul {
+                list-style: none;
+                margin-top: 30px;
+
+                li {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 160%;
+                    color: $dark-gray;
+                    margin-bottom: 15px;
+                    overflow: hidden;
+
+                    @media(max-width:575px) {
+                        font-size: 16px;
+                    }
+
+                    span {
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+                        line-height: 32px;
+                        background: $doctor-theme-color;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                        color: $white;
+                        text-align: center;
+                        float: left;
+                    }
+                }
+            }
+
+            .career-btn {
+                display: flex;
+                margin-top: 50px;
+
+                a {
+                    padding: 15px 30px;
+                    background: rgba(39, 165, 255, 0.13);
+                    border-radius: 4px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 160%;
+                    padding-right: 50px;
+                    position: relative;
+
+                    &:hover {
+                        background: $doctor-theme-color;
+                        color: $white;
+                    }
+
+                    &:before {
+                        position: absolute;
+                        font-family: "themify";
+                        content: "\e649";
+                        top: 17px;
+                        right: 30px;
+                        font-size: 14px;
+                    }
+
+                    &+a {
+                        margin-left: 20px;
+
+                        @media(max-width:575px) {
+                            margin-left: 10px;
+                        }
+                    }
+
+                    @media(max-width:575px) {
+                        padding: 10px 10px;
+                        padding-right: 40px;
+
+                        &:before {
+                            top: 12px;
+                            right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 3.7 dc-team-section */
+
+.dc-team-section,
+.dc-team-section-s2,
+.dc-team-section-s3 {
+    .team-wrap {
+
+        .team-single {
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #a0d2f5 100%);
+            flex-basis: 28.33%;
+            border-radius: 8px;
+            padding: 2px;
+            transition: all .4s ease-in-out;
+
+            @media (max-width:991px) {
+                margin-bottom: 30px;
+            }
+
+            .team-boder-shapes-1 {
+                padding: 35px 35px;
+                background: $white;
+                text-align: center;
+                border-radius: 8px;
+                transition: all .4s ease-in-out;
+
+                .team-single-img {
+                    overflow: hidden;
+                    border-radius: 8px;
+                    object-fit: cover;
+
+                    img {
+                        transition: all .4s ease-in-out;
+                        width: 100%;
+                    }
+                }
+
+                .team-single-text {
+                    margin-top: 30px;
+
+
+                    h2 {
+                        a {
+                            font-size: 22px;
+                            font-weight: 400;
+                            line-height: 33px;
+                            color: $dark-gray;
+                            margin-bottom: 12px;
+                            transition: all .4s ease-in-out;
+
+                            @media (max-width:575px) {
+                                font-size: 20px;
+                                line-height: 30px;
+                            }
+
+                            &:hover {
+                                color: $doctor-theme-color;
+                            }
+                        }
+                    }
+
+                    span {
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 26px;
+                        color: $text-color;
+
+                        @media (max-width:575px) {
+                            font-size: 16px;
+                            line-height: 22px;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+
+                .team-boder-shapes-1 {
+                    .team-single-img {
+                        img {
+                            transform: scale(1.2);
+                            border-radius: 8px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .team-all {
+            text-align: center;
+            margin-top: 70px;
+
+            @media (max-width:991px) {
+                margin-top: 40px;
+            }
+
+            .dc-btn {
+                padding: 20px 40px;
+                line-height: 10px;
+
+                @media (max-width:575px) {
+                    padding: 10px 30px;
+                }
+            }
+        }
+    }
+}
+
+
+/* 3.8 dc-appoinment-section  */
+
+.dc-appoinment-section,
+.dc-appoinment-section-s2 {
+    position: relative;
+    z-index: 11;
+
+    @media (max-width:991px) {
+        margin-top: 0;
+        padding: 90px 0;
+    }
+
+    @media (max-width:767px) {
+        padding: 80px 0;
+    }
+
+    .appoinment-wrap {
+        padding: 70px;
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+        background: $white;
+        box-shadow: 0px 4px 10px 3px rgba(21, 3, 131, .05);
+
+        .appoinment-text {
+            text-align: left;
+            margin-top: 13px;
+
+            @media (max-width:991px) {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            @media (max-width:575px) {
+                margin-bottom: 40px;
+            }
+
+            .appoinment-btn {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 26px;
+                padding: 17px 35px;
+                border-radius: 50px;
+                color: $white;
+                background: $doctor-theme-color;
+                transition: all .4s ease-in-out;
+
+                @media (max-width:450px) {
+                    font-size: 17px;
+                    padding: 10px 15px;
+                }
+
+                @media (max-width:380px) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                &:hover {
+                    background: $white;
+                    color: $text-color;
+                }
+            }
+
+            h2 {
+                font-size: 48px;
+                font-weight: 400;
+                line-height: 65px;
+                color: $white;
+                margin-top: 40px;
+                padding-right: 135px;
+
+                @media (max-width:1199px) {
+                    font-size: 38px;
+                    line-height: 60px;
+                }
+
+                @media (max-width:991px) {
+                    padding-right: 0;
+                }
+
+                @media (max-width:575px) {
+                    font-size: 30px;
+                    line-height: 45px;
+                    margin-top: 30px;
+                }
+
+                @media (max-width:450px) {
+                    font-size: 25px;
+                    line-height: 35px;
+                }
+
+                @media (max-width:380px) {
+                    font-size: 16px;
+                    line-height: 25px;
+                }
+            }
+        }
+
+        .appoinment-right {
+            .form-field {
+                margin-bottom: 30px;
+                .date {
+                    position: relative;
+
+                    label {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 80px;
+                        height: 70px;
+                        text-align: center;
+                        line-height: 70px;
+                        border-left: 2px solid $doctor-theme-color;
+                        color: $doctor-theme-color;
+
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                &.s2 {
+                    width: 100%;
+
+                    .form-control-gender,
+                    .form-control-age {
+                        margin-left: 15px;
+                        flex-basis: 25%;
+
+                        select {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .submit-area {
+                text-align: center;
+            }
+
+
+            .form-control-name,
+            .form-control-mail,
+            .form-control-number {
+                width: 100%;
+                font-size: 17px;
+                font-weight: 700;
+                line-height: 22px;
+                color: $text-color;
+                padding: 13px 20px;
+                border: 2px solid $doctor-theme-color;
+                border-radius: 8px;
+                background: $white;
+                color: $text-color;
+                height: 70px;
+
+                @media (max-width:1399px) {
+                    width: 47.4%;
+                }
+
+                @media (max-width:1199px) {
+                    width: 100%;
+                }
+
+                &::placeholder {
+                    color: $text-color;
+                }
+
+                &:focus {
+                    color: $text-color;
+                }
+
+                &:focus-visible {
+                    outline: 0;
+
+                    &::placeholder {
+                        color: $text-color;
+                    }
+                }
+            }
+
+            textarea {
+                height: 130px;
+                border: 2px solid $doctor-theme-color;
+                border-radius: 8px;
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+
+
+            .form-control-age,
+            .form-control-gender,
+            .form-control-choose-department {
+                select {
+                    font-size: 17px;
+                    font-weight: 700;
+                    width: 100%;
+                    line-height: 22px;
+                    color: $text-color;
+                    padding: 13px 20px;
+                    border: 2px solid $doctor-theme-color;
+                    border-radius: 8px;
+                    background: $text-color;
+                    margin-bottom: 20px;
+                    display: inline-block;
+                    cursor: pointer;
+                    opacity: 1;
+                    appearance: none;
+                    background: transparent url(../images/select-icon2.png) no-repeat calc(100% - 20px) center;
+                    position: relative;
+                    height: 70px;
+
+                    @media (max-width:1399px) {
+                        background: transparent url(../images/select-icon2.png) no-repeat calc(100% - 13px) center;
+                    }
+
+                    @media (max-width:1199px) {
+                        background: transparent url(../images/select-icon2.png) no-repeat calc(100% - 25px) center;
+                    }
+
+                    option {
+                        color: $text-color;
+                    }
+
+                    &:focus-visible {
+                        outline: 0;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+
+            .form-control-choose-department {
+                select {
+                    width: 100%;
+                }
+            }
+
+            .form-control-btn {
+                font-size: 19px;
+                font-weight: 700;
+                line-height: 25px;
+                color: $text-color;
+                background: $white;
+                border-radius: 5px;
+                padding: 12px 27px 16px;
+                margin-top: 20px;
+                transition: all .4s ease-in-out;
+
+                @media (max-width:450px) {
+                    font-size: 17px;
+                    padding: 10px 15px;
+                }
+
+                @media (max-width:380px) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                &:hover {
+                    background: $doctor-theme-color;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

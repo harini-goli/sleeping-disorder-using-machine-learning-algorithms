@@ -1,0 +1,101 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+Theme Name:    Pdoctor - Real Estate and Architect HTML Template
+Version:        1.0.0
+-------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+1. General
+	1.1 Theme Reset Style
+	1.2 Global Elements
+
+2. header
+	2.1 navigation
+
+3. content
+	3.1 dc-hero-area
+	3.2 dc-service-section 
+	3.3 dc-step-section
+	3.4 dc-testimonial-section
+	3.5 dc-blog-post-area
+	3.6 dc-career-section
+	3.7 dc-team-section
+	3.8 dc-appoinment-section
+
+4. dc-footer
+
+5. dc-service-single-area
+
+6. dc-team-single
+
+7. dc-terms-section
+
+8. dc-faq-page
+
+9. dc-blog-pg-section
+
+10. dc-blog-single-section
+
+11. dc-contact-pg-section
+
+12. error-404-section
+
+----------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+1. General
+----------------------------------------------------------------*/
+
+// helpers
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+
+// base
+@import "base/base";
+
+
+// components
+@import "components/section-title";
+@import "components/buttons";
+@import "components/form";
+@import "components/social-links";
+@import "components/page-title";
+@import "components/preloader";
+@import "components/blog-sidebar";
+@import "components/pagination";
+
+// layout
+@import "layout/header";
+@import "layout/hero-slider";
+@import "layout/footer";
+
+// components
+@import "components/sticky-header";
+
+// page
+@import "pages/home-style";
+
+@import "pages/service-single";
+
+@import "pages/team-single";
+
+@import "pages/terms";
+
+@import "pages/faq";
+
+@import "pages/blog";
+
+@import "pages/blog-single";
+
+@import "pages/contact";
+
+@import "pages/error-404";
+
+
+
